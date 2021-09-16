@@ -1,0 +1,16 @@
+.bs-btn {
+    background: $clr-primary;
+    border-radius: 4rem;
+    cursor: pointer;
+    color: $clr-white;
+    padding: 0.7rem 1.6rem;
+    font-size: 1.6rem;
+    display: inline-block;
+    border: 0;
+    &:hover,
+    &:focus,
+    &:active {
+        color: $clr-white;
+        text-decoration: none;
+    }
+}

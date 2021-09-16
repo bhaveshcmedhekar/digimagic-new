@@ -1,0 +1,34 @@
+/*
+@Project : ugam solutions
+@Desc : html, css, jQuery
+@type : html
+@Author : bhavesh
+@Date : 07192021114554;
+*/
+
+
+/* config include */
+
+@import "config/variables";
+@import "config/mixin";
+// @import "config/_reboot";
+
+/* reset files */
+
+// @import "base/fonts";
+@import "base/local-reset";
+@import "base/base-setup";
+@import "base/bs-btn";
+
+/* extented */
+
+// @import "extended/example";
+
+/* layout */
+
+//@import "layout/lyt-example";
+
+/* component */
+
+@import "component/comp-header";
+@import "component/comp-footer";

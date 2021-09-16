@@ -1,0 +1,34 @@
+/* colors */
+
+$clr-white:#ffffff;
+$clr-black:#000000;
+$clr-primary:##EC411B;
+//$clr-secondary:#282364;
+$clr-gray-dark:#2F2E2E;
+$clr-gray-light:#E5E2E2;
+
+/*font family*/
+
+// $font-regular:400;
+// $font-light:300;
+// $font-medium:500;
+// $font-semibold:600;
+// $font-bold:700;
+
+/* breakpoints */
+
+$font-thin: 'Helvetica Neue Thin';
+$font-light: 'Helvetica Neue Light';
+$font-regular: "Helvetica Neue Regular",
+sans-serif;
+$font-semibold: "Helvetica Neue Semibold",
+sans-serif;
+$font-bold: 'Helvetica Neue Bold';
+$font-extrabold: 'Helvetica Neue Extra-bold';
+
+/* media queries */
+
+$media-xs:1200px;
+$media-md:992px;
+$media-lg:768px;
+$media-xl:576px;

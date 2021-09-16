@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>ugam solutions</title>
+    <style type="text/css">
+        body {
+            font-family: "Roboto", sans-serif;
+            margin: 0;
+        }
+        
+        .logo {
+            margin-left: 30px;
+            margin-top: 30px;
+            padding: 8px;
+        }
+        
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .siteContainer {
+            font-size: 18px;
+            line-height: 1.3rem;
+            margin-left: 50px;
+            margin-top: 40px;
+        }
+        
+        .siteContainer ul li {
+            color: #262262;
+            font-size: 90%;
+            font-weight: normal;
+            list-style: none outside none;
+            margin-left: -8px;
+            min-height: 24px;
+            position: relative;
+            padding-left: 5px;
+        }
+        
+        .siteContainer>ul>li {
+            padding: 10px 0 10px;
+        }
+        
+        .siteContainer>ul>li:nth-child(odd):after {
+            content: "";
+            left: -50px;
+            z-index: -2;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background: #f2f2f2;
+            right: 0;
+        }
+        
+        .siteContainer ul li:before {
+            content: "";
+            border: 8px solid transparent;
+            border-left: 8px solid #888;
+            display: inline-block;
+            position: relative;
+            position: absolute;
+            left: 6px;
+            top: 18px;
+            z-index: -1;
+            /* transform: rotate(45deg);
+                    transform-origin: left; */
+            transition: all 0.3s ease;
+        }
+        
+        .siteContainer ul li.open:before {
+            transform: rotate(45deg);
+            transform-origin: left;
+        }
+        
+        .siteContainer ul li .subMenu li:before {
+            transform: rotate(0);
+            transform-origin: left;
+            border: 6px solid transparent;
+            border-left: 8px solid #888;
+            top: 11px;
+        }
+        
+        .siteContainer ul li.parent:before {
+            border-left: 8px solid #000;
+        }
+        
+        .siteContainer ul li .subMenu {
+            padding-left: 34px;
+            position: relative;
+        }
+        
+        .siteContainer ul li .subMenu li {
+            padding-left: 30px;
+        }
+        
+        .siteContainer ul li .lbl {
+            padding-left: 30px;
+        }
+        
+        .siteContainer ul li a {
+            color: #262262;
+            display: inline-block;
+            text-transform: capitalize;
+            padding: 6px 0 7px;
+        }
+        
+        .siteContainer ul li a:hover,
+        .siteContainer h4 a:hover {
+            color: #f7941e;
+        }
+        
+        .status {
+            color: white;
+            background: red;
+            display: inline-block;
+            padding: 8px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+        }
+    </style>
+
+    <style>
+        .element-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .filter-list {
+            display: flex;
+            margin: 2rem 0;
+            padding: 0;
+            list-style: none;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .sortby-item.is-checked,
+        .filter-item.is-checked {
+            background-color: red;
+            color: white;
+        }
+        
+        .filter-item {
+            margin: 1rem;
+            cursor: pointer;
+            background-color: #ccc;
+            padding: 1rem;
+        }
+        
+        .elm-item {
+            width: 10rem;
+            height: 10rem;
+            border: 2px solid #000;
+            background-color: limegreen;
+            display: flex;
+            margin: 1rem;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pink {
+            background-color: pink;
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .yellow {
+            background-color: yellow;
+        }
+        
+        .white {
+            background-color: white;
+        }
+        
+        .blue {
+            background-color: blue;
+        }
+        
+        .green {
+            background-color: green;
+        }
+        
+        .elm-item span {
+            margin: 0.2rem;
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        
+        .sortby-list {
+            display: flex;
+        }
+        
+        .sortby-item {
+            margin: 1rem;
+            cursor: pointer;
+            background-color: #ccc;
+            padding: 0.5rem 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mesonary-wrapper">
+        <ul class="filter-list">
+            <li class="filter-item is-checked" data-filter="elm-item">all</li>
+            <li class="filter-item" data-filter="child">child</li>
+            <li class="filter-item" data-filter="big">big</li>
+        </ul>
+
+        <ul class="sortby-list">
+            <li class="sortby-item" data-sortby="name">Name</li>
+            <li class="sortby-item" data-sortby="age">age</li>
+            <li class="sortby-item" data-sortby="color">color</li>
+        </ul>
+
+        <di class="element-wrapper">
+            <div class="elm-item big blue">
+                <span class="name">Bhakti</span>
+                <span class="age">10</span>
+                <span class="color blue">blue</span>
+            </div>
+            <div class="elm-item child yellow">
+                <span class="name">Shlok</span>
+                <span class="age">8</span>
+                <span class="color yellow">yellow</span>
+            </div>
+            <div class="elm-item child red">
+                <span class="name">Niveda</span>
+                <span class="age">2</span>
+                <span class="color red">red</span>
+            </div>
+            <div class="elm-item big pink">
+                <span class="name ">Divesh</span>
+                <span class="age">13</span>
+                <span class="color pink">pink</span>
+            </div>
+            <div class="elm-item big green">
+                <span class="name ">Atharv</span>
+                <span class="age">15</span>
+                <span class="color green">green</span>
+            </div>
+
+        </di>
+    </div>
+    <!-- <script src="assets/js/libraries/jquery.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <script src="https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script type="text/javascript">
+        $(function() {
+
+            var $grid = $('.element-wrapper').isotope({
+                itemSelector: '.elm-item',
+                layoutMode: 'fitRows',
+                getSortData: {
+                    name: '.name',
+                    age: '.age parseInt',
+                    color: '.color',
+                },
+            });
+
+
+            // $grid.on('arrangeComplete',
+            //     function(event, filteredItems) {
+            //         console.log('Isotope arrange completed on ' +
+            //             filteredItems.length + ' items');
+            //     }
+            // );
+
+            // bind filter button click
+            $('.filter-list').on('click', ".filter-item", function() {
+                var filterValue = $(this).data('filter');
+                $grid.isotope({
+                    filter: "." + filterValue
+                });
+            });
+
+
+            // change is-checked class on buttons
+            $('.filter-list, .sortby-list').each(function(i, buttonGroup) {
+                var $buttonGroup = $(buttonGroup);
+                $buttonGroup.on('click', '.filter-item, .sortby-item', function() {
+                    $buttonGroup.find('.is-checked').removeClass('is-checked');
+                    $(this).addClass('is-checked');
+                });
+            });
+
+            $('.sortby-list').on('click', '.sortby-item', function() {
+                var sortByValue = $(this).data('sortby');
+                $grid.isotope({
+                    sortBy: sortByValue
+                });
+            });
+
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+.comp-footer {
+    padding-top: 10rem;
+    .title {
+        font-size: 2rem;
+        margin-bottom: 2.4rem;
+        color: #231F20;
+    }
+    .footerpolicy {
+        padding-top: 14rem;
+        padding-bottom: 7rem;
+        font-weight: bold;
+        position: relative;
+        &:before {
+            content: "";
+            background: url(../images/mesh-footer.png) top center no-repeat;
+            position: absolute;
+            background-size: cover;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 12rem;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+        }
+        a {
+            color: #7B7E80;
+            text-decoration: none;
+        }
+        p {
+            font-weight: 600;
+        }
+        &.typ-social-links {
+            .social-links {
+                display: block;
+            }
+        }
+    }
+    .social-links {
+        margin-left: auto;
+        a {
+            border-radius: 50%;
+            background: #23aae1;
+            padding: 1.2rem;
+            margin-left: 1.5rem;
+            display: inline-block;
+            &.linkedin {
+                background-color: #2797cf !important;
+            }
+        }
+        img {
+            width: 2.8rem;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .comp-footer {
+        padding-top: 6rem;
+        .footerpolicy {
+            padding-top: 10rem;
+            padding-bottom: 4rem;
+            .container {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .social-links {
+                margin-top: 2rem;
+                margin-left: initial;
+                a {
+                    margin: 1rem 0.5rem;
+                }
+                img {
+                    width: 2.4rem;
+                }
+            }
+            .left-wrap {
+                text-align: center;
+            }
+        }
+    }
+    .subscribe-wrap {
+        margin-top: 2rem;
+        .bs-btn {
+            width: 16rem;
+            text-align: center;
+        }
+    }
+}
